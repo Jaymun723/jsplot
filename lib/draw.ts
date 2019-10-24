@@ -79,7 +79,6 @@ export class DrawPlot extends UtilPlot {
     const y2 = a * x2 + b
     const start = p(x1, y1)
     const end = p(x2, y2)
-    console.log(start, end)
     this.drawSegment(start, end, options)
   }
 
