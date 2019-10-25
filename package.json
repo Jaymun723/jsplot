@@ -1,6 +1,6 @@
 {
   "name": "jsplot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Js Plot (I hope).",
   "main": "out/index.js",
   "scripts": {
