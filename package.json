@@ -4,7 +4,7 @@
   "description": "Js Plot (I hope).",
   "main": "out/index.js",
   "scripts": {
-    "playground": "parcel playground/index.js",
+    "playground": "parcel playground/index.html",
     "build": "tsc -p tsconfig.lib.json"
   },
   "repository": "https://github.com/Jaymun723/jsplot",

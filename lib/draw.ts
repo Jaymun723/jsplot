@@ -53,8 +53,8 @@ export class DrawPlot extends UtilPlot {
     this.ctx.beginPath()
     this.ctx.moveTo(aCoords.x, aCoords.y)
     this.ctx.lineTo(bCoords.x, bCoords.y)
-    const style = `${o.radius(5) + "px"} ${o.color("red")}`
-    this.ctx.strokeStyle = style
+    this.ctx.lineWidth = o.radius(1)
+    this.ctx.strokeStyle = o.color("red")
     this.ctx.stroke()
     this.ctx.closePath()
   }
@@ -65,8 +65,10 @@ export class DrawPlot extends UtilPlot {
     this.ctx.font = o.font("10px sans-serif")
     this.ctx.textAlign = o.align("center")
     if (o.stroke(false)) {
+      this.ctx.strokeStyle = o.color("black")
       this.ctx.strokeText(text, p.x, p.y)
     } else {
+      this.ctx.fillStyle = o.color("black")
       this.ctx.fillText(text, p.x, p.y)
     }
   }
@@ -79,7 +81,8 @@ export class DrawPlot extends UtilPlot {
     const y2 = a * x2 + b
     const start = p(x1, y1)
     const end = p(x2, y2)
-    this.drawSegment(start, end, options)
+    const o = oc(options)
+    this.drawSegment(start, end, { ...options, color: o.color("blue") })
   }
 
   private drawAxisGrads(orientation: "x" | "y") {
